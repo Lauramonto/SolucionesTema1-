@@ -1,10 +1,4 @@
 ---
-title: "BoletinTema1ALUMNO"
-author: "Laura Montoliu"
-date: "16/2/2022"
-output: html_document
----
----
 title: "Boletín Tema 1"
 subtitle: Tratamiento de Datos. Grado en Ciencia de Datos- UV
 author: "Marcelino Martínez"
