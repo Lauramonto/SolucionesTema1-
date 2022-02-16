@@ -93,19 +93,37 @@ c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 
 ```{r}
 
+#Cargamos los conjuntos de datos 
+data("mammals")
+data("Animals2")
+class(mammals)
+class(Animals2)
 
+#1 a)
 
+#Caracteristicas de ambos conjuntos
+summary(mammals)
+summary(Animals2)
+#1 b)
 
+#Primera vision de ambos conjuntos
+dim(mammals)
+head(mammals)
+tail(mammals)
+str(mammals)
 
+dim(Animals2)
+head(Animals2)
+tail(Animals2)
+str(Animals2)
 
+#1 c)
+#Nombre de las columnas y filas de cada conjunto de datos
+rownames(mammals)
+colnames(mammals)
 
-
-
-
-
-
-
-
+rownames(Animals2)
+colnames(Animals2)
 
 
 
@@ -114,7 +132,9 @@ c.  Muestra los nombres de las filas y las columnas (**rownames**, **colnames**)
 d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los aminales que aparezcan en ambos conjuntos
 
 ```{r}
-
+library(dplyr)
+commonAnimals <- intersect(mammals, Animals2)
+rownames(commonAnimals)
 
 
 
@@ -125,11 +145,13 @@ d.  Usa la función **intersect** y almacena en la variable *commonAnimals* los 
 e.  Usa **setdiff** para averiguar qué animales no están en ambos conjuntos. ¿Cuántos son ?. ¿Qué tipo de animales son?
 
 ```{r}
+NOTcommonAnimals_mammals <- setdiff(rownames(mammals), rownames(Animals2))
+NOTcommonAnimals_mammals
+#Hay 4 animales que no estan
 
-
-
-
-
+NOTcommonAnimals_Animals2 <-setdiff(rownames(Animals2), rownames(mammals))
+NOTcommonAnimals_Animals2
+#Hay 7 animales que no estan
 
 ```
 
@@ -137,15 +159,7 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 
 ```{r}
 
-
-
-
-
-
-
-
-
-
+#La diferencia es que los animales que no aparecen estan mal escritos
 
 
 ```
@@ -153,6 +167,16 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
 2.  La funcion **qqPlot** del paquete **car** puede ser utilizada para determinar gráficamente si una serie de puntos siguen una distribución de datos Gaussiana. Si las muestras están dentro de las líneas discontinuas podemos indicar que siguen una distribución Gaussiana con un 95 % de confianza. Utilizando esta función representa el logaritmo neperiano (**log**) del peso del cerebro (**brain weigths**) del registro de datos **mammals** del paquete **MASS** y conjunto de datos **Animals2** de la librería **robustbase**. ¿Presentan el mismo comportamiento ?.¿Podríamos decir que siguen una distribución Gaussiana ?
 
 ```{r}
+library(car)
+
+brains1<-mammals$brain
+qqPlot(log(brains1))
+
+brains2 <- Animals2$brain
+qqPlot(log(brains2))
+
+
+#Presentan el mismo comportamiento y siguen una distribucion de datos gaussiana ya que las muestras estan dentro de las lineas discontinuas
 
 
 ```
@@ -164,15 +188,6 @@ e.  Determina las diferencia entre los animales que no aparecen en ambos conjunt
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
-
-
-
-
-
-
-
-
-
 
     ```
 
