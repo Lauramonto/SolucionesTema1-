@@ -208,31 +208,51 @@ head(libReturn$results, n=5)
 
 ```{r}
 
+#4 a)
+data(cabbages)
+cabbages
 
+# 1. Número de registros.
+# 2. Número de variables. 
+# 3. Tipos de variables(numéricas, categóricas, fecha, etc) 
 
+#Las 3 primeras etapas se pueden determinar de varias formas
 
+str(cabbages)
+summary(cabbages)
+dim(cabbages) # no nos dice las clases
 
+#Hay 60 registros y 4 variables, los tipos de variables son de tipo factor y
+#numericas y enteras
+  
 
+#4 b)
+any(is.na(cabbages))
+colSums(sapply(cabbages, is.na))
+#no hay ningun valor perdido en ninguna de las variables
 
+#4 c)
+data(Chile)
 
+# 1. Número de registros.
+# 2. Número de variables. 
+# 3. Tipos de variables(numéricas, categóricas, fecha, etc) 
 
+#Las 3 primeras etapas se pueden determinar de varias formas
 
+str(Chile)
+summary(Chile)
+dim(Chile) # no nos dice las clases
 
+#Hay 2700 registros y 8 variables, los tipos de variables son de tipo factor, 
+#numericas y enteras
+  
+any(is.na(Chile))
+colSums(sapply(Chile, is.na))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#4 d)
+summary(cabbages)
+summary(Chile)
 
 ```
 
