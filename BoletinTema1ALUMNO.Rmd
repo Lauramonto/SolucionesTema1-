@@ -188,6 +188,14 @@ qqPlot(log(brains2))
     c.  Determina el número de librerías que tienes instaladas.
 
     ```{r}
+#3 a)
+libReturn<-library()
+libReturn
+
+#3 b)
+head(libReturn$results, n=5)
+
+#3 c)
 
     ```
 
