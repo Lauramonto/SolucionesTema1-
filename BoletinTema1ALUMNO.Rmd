@@ -1,4 +1,10 @@
 ---
+title: "BoletinTema1ALUMNO"
+author: "Laura Montoliu"
+date: "16/2/2022"
+output: html_document
+---
+---
 title: "Boletín Tema 1"
 subtitle: Tratamiento de Datos. Grado en Ciencia de Datos- UV
 author: "Marcelino Martínez"
@@ -35,7 +41,6 @@ language:
     proof: 'Demostración. '
     remark: 'Nota: '
     solution: 'Solución. '
-    
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F,}
@@ -61,7 +66,6 @@ knit_hooks$set(inline = function(x) {
     paste(as.character(x), collapse = ', ')
   }
 })
-
 #knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
