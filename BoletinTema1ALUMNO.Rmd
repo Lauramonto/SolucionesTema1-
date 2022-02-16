@@ -35,6 +35,7 @@ language:
     proof: 'Demostración. '
     remark: 'Nota: '
     solution: 'Solución. '
+    
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F,}
@@ -60,6 +61,7 @@ knit_hooks$set(inline = function(x) {
     paste(as.character(x), collapse = ', ')
   }
 })
+
 #knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
